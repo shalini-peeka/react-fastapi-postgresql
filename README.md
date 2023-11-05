@@ -1,2 +1,3 @@
 # react-fastapi-postgresql
-CAP Days
+CAP Days Kubernetes Bootcamp
+    
