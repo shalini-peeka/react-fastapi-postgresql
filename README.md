@@ -53,5 +53,6 @@ pip install -r ./requirements.txt
 # Run backend
 uvicorn blog.main:app --host 0.0.0.0 --port 8000 --reload
 ```
+Now app will run on http://localhost:8000
 
 In case, if terminal throws an error unvicorn is not found, try adding python -m in beginning of the command
