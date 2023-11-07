@@ -36,7 +36,7 @@ jobs:
     
     - name: Docker Push Image
       run: |
-        echo ${{ secrets.REGISTRY_SECRET }} | docker login ${{ env.REGISTRY }} -u ${{ env.REGISTRY_USER }} --password-stdin 
+        echo ${{ secrets.RIGISTERY_SECRET }} | docker login ${{ env.REGISTRY }} -u ${{ env.REGISTRY_USER }} --password-stdin 
         docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}    
 
   deploy:
