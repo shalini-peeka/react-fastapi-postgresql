@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend  # Sets Deployment name
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: backend
+          image: 3a7jouokyffroregistry.azurecr.io/shpeeka/backend:latest
+          imagePullPolicy: "Always"
+          ports:
+            - containerPort: 8000  # Exposes container port    
+          env:
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: db-url
+                  key: url
+      imagePullSecrets:
+      - name: docker-pull-secret
